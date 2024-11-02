@@ -3,7 +3,7 @@ options:
 steps:
 - name: 'node'
   entrypoint: 'npm'
-  args: ['install']
+  args: ['install','install @nestjs/cli']
 # - name: 'node'
 #   entrypoint: 'npm'
 #   args: ['test']

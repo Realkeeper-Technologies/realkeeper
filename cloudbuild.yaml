@@ -19,7 +19,7 @@ artifacts:
 #   - name: node  # Use the appropriate Node.js version
 #     entrypoint: 'npm'
 #     args: ['install']
-#   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-#     entrypoint: 'bash'
-#     args: ['-c','gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'bash'
+    args: ['-c','gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
 timeout: '1600s'

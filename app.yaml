@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # [START gae_flex_quickstart_yaml]
-runtime: nodejs18
+runtime: nodejs
 env: flex
 runtime_config:
   operating_system: ubuntu22

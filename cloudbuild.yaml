@@ -1,7 +1,25 @@
 options:
   logging: CLOUD_LOGGING_ONLY
 steps:
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: 'bash'
-    args: ['-c','gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
+- name: 'node'
+  entrypoint: 'npm'
+  args: ['install']
+- name: 'node'
+  entrypoint: 'npm'
+  args: ['test']
+- name: 'node'
+  entrypoint: 'npm'
+  args: ['run', 'build']
+artifacts:
+  npmPackages:
+  - repository: 'https://asia-east1-npm.pkg.dev/bamboo-strata-437606-u9/realkeeper-npm-artifacts'
+    packagePath: '.'
+
+# steps:
+#   - name: node  # Use the appropriate Node.js version
+#     entrypoint: 'npm'
+#     args: ['install']
+#   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+#     entrypoint: 'bash'
+#     args: ['-c','gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
 timeout: '1600s'

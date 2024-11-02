@@ -1,7 +1,7 @@
 {
   "name": "realkeeper",
-  "version": "0.0.2",
-  "description": "Removed CLI install command from cloud build yaml.",
+  "version": "0.0.3",
+  "description": "Removed CLI install command from cloud build yaml3.",
   "author": "",
   "private": false,
   "license": "UNLICENSED",

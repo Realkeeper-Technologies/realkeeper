@@ -1,9 +1,15 @@
 options:
   logging: CLOUD_LOGGING_ONLY
 steps:
+# - name: 'node'
+#   entrypoint: 'npm'
+#   args: ['install',-g '@nestjs/cli','-v']
+
 - name: 'node'
   entrypoint: 'npm'
-  args: ['install',-g '@nestjs/cli','-v']
+  args: ['-v']
+
+
 # - name: 'node'
 #   entrypoint: 'npm'
 #   args: ['test']

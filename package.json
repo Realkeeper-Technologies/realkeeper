@@ -1,13 +1,12 @@
 {
   "name": "realkeeper",
   "version": "0.0.2",
-  "description": "This is a description of the npm package.",
+  "description": "Removed CLI install command from cloud build yaml.",
   "author": "",
   "private": false,
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
-    "gcp-build": "npm run build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "node dist/main",
     "start:dev": "nest start --watch",

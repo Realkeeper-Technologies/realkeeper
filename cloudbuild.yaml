@@ -1,28 +1,32 @@
 options:
   logging: CLOUD_LOGGING_ONLY
 steps:
-# - name: 'node'
-#   entrypoint: 'npm'
-#   args: ['install',-g '@nestjs/cli','-v']
+- name: 'node'
+  entrypoint: 'npm'
+  args: ['install']
 
 - name: 'node'
   entrypoint: 'npm'
-  args: ['-v']
+  args: ['install -g @nestjs/cli']
 
+# - name: 'node'
+#   entrypoint: 'npm'
+#   args: ['-v']
 
 # - name: 'node'
 #   entrypoint: 'npm'
 #   args: ['test']
-# - name: 'node'
-#   entrypoint: 'npm'
-#   args: ['run', 'build']
-# - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-#   entrypoint: 'bash'
-#   args: ['-c','gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
-# artifacts:
-#   npmPackages:
-#   - repository: 'https://asia-east1-npm.pkg.dev/bamboo-strata-437606-u9/realkeeper-npm-artifacts'
-#     packagePath: '.'
+
+- name: 'node'
+  entrypoint: 'npm'
+  args: ['run', 'build']
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'bash'
+  args: ['-c','gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
+artifacts:
+  npmPackages:
+  - repository: 'https://asia-east1-npm.pkg.dev/bamboo-strata-437606-u9/realkeeper-npm-artifacts'
+    packagePath: '.'
 
 # steps:
 #   - name: node  # Use the appropriate Node.js version

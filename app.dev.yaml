@@ -16,4 +16,4 @@ resources:
 env_variables:
   ENVIRONMENT: "dev"   # Environment variable to specify environment type
   DATABASE_URL: "dev-db-url"   # Replace with actual dev DB URL
-instance_class: F1             # Choose a cost-effective instance for dev
+# instance_class: F1             # Choose a cost-effective instance for dev

@@ -16,4 +16,4 @@ resources:
 env_variables:
   ENVIRONMENT: "test"   # Environment variable to specify environment type
   DATABASE_URL: "test-db-url"   # Replace with actual test DB URL
-instance_class: F1             # Choose a cost-effective instance for test
+# instance_class: F1             # Choose a cost-effective instance for test

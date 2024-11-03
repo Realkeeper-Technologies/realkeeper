@@ -16,4 +16,4 @@ resources:
 env_variables:
   ENVIRONMENT: "prod"   # Environment variable to specify environment type
   DATABASE_URL: "prod-db-url"   # Replace with actual prod DB URL
-instance_class: F4             # Choose a cost-effective instance for prod
+# instance_class: F4             # Choose a cost-effective instance for prod

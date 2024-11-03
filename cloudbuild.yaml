@@ -11,12 +11,14 @@ steps:
 
 - name: 'node'
   entrypoint: 'npm'
-  args: ['run', 'build']
+  args: ['run', 'build', '--', '--env=${_ENVIRONMENT}']
+  # args: ['run', 'build']
 
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
-  args: ['-c','gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
-  
+  args: ['-c','gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy app.${_ENVIRONMENT}.yaml']
+  # args: ['-c','gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
+
 artifacts:
   npmPackages:
   - repository: 'https://asia-east1-npm.pkg.dev/bamboo-strata-437606-u9/realkeeper-npm-artifacts'

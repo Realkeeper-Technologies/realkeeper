@@ -11,12 +11,13 @@ steps:
 
 - name: 'node'
   entrypoint: 'npm'
-  args: ['run', 'build', '--', '--env=${_ENVIRONMENT}']
+  args: ['run', 'build', '--', '--env=dev']
+  # args: ['run', 'build', '--', '--env=${_ENVIRONMENT}']
   # args: ['run', 'build']
 
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
-  args: ['-c','gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy app.${_ENVIRONMENT}.yaml']
+  args: ['-c','gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy app.dev.yaml']
   # args: ['-c','gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
 
 artifacts:

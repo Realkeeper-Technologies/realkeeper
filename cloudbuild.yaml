@@ -11,9 +11,9 @@ steps:
 
 - name: 'node'
   entrypoint: 'npm'
-  args: ['run', 'build', '--', '--env=dev']
+  # args: ['run', 'build', '--', '--env=dev']
   # args: ['run', 'build', '--', '--env=${_ENVIRONMENT}']
-  # args: ['run', 'build']
+  args: ['run', 'build']
 
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'

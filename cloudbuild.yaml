@@ -10,10 +10,10 @@ steps:
 #   args: ['test']
 
 - name: 'node'
-  entrypoint: 'npm'
+  entrypoint: 'npx'
   # args: ['run', 'build', '--', '--env=dev']
   # args: ['run', 'build', '--', '--env=${_TARGET_ENV}']
-  args: ['run', 'build']
+  args: ['next', 'build']
 
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'

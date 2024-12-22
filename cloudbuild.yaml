@@ -20,9 +20,9 @@ steps:
   args: ['-c','gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy app${_TARGET_ENV}yaml']
   # args: ['-c','gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
 
-artifacts:
-  npmPackages:
-  - repository: 'https://asia-east1-npm.pkg.dev/bamboo-strata-437606-u9/realkeeper-${_TARGET_ARTIFACT_REPOSITORY}-artifacts'
-    packagePath: '.'
+# artifacts:
+#   npmPackages:
+#   - repository: 'https://asia-east1-npm.pkg.dev/bamboo-strata-437606-u9/realkeeper-${_TARGET_ARTIFACT_REPOSITORY}-artifacts'
+#     packagePath: '.'
 
 timeout: '1600s'

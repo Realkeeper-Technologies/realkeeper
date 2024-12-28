@@ -25,8 +25,7 @@ export default async function handler(req, res) {
   const dbConfig = {
     host: req.headers.host.includes('localhost') ? process.env.DATABASE_HOST : await getSecret('mysql-internal-ip'),
     user: process.env.DATABASE_USER,     
-    // password: req.headers.host.includes('localhost') ? process.env.DATABASE_PASSWORD : await getSecret('mysql-deepak-pwd'), 
-    password: process.env.DATABASE_PASSWORD, 
+    password: req.headers.host.includes('localhost') ? process.env.DATABASE_PASSWORD : await getSecret('mysql-deepak-pwd'), 
     database:process.env.DATABASE_NAME
   };
   console.log(dbConfig);

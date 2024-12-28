@@ -23,9 +23,11 @@ export default function CreateDbPage() {
       } else {
         const errorData = await response.json();
         setMessage(`Error: ${errorData.message}`);
+        console.log(errorData);
       }
     } catch (error) {
       setMessage(`Error: ${error.message}`);
+      console.log(error);
     } finally {
       setLoading(false);
     }

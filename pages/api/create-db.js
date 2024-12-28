@@ -8,12 +8,10 @@ export default async function handler(req, res) {
   }
 
   const dbConfig = {
-    // host: process.env.DATABASE_CONNECTION,
-    host: process.env.DATABASE_HOST,
-    // host: process.env.DATABASE_HOST_INTERNAL, 
+    host: process.env.DATABASE_CONNECTION,
+    // host: process.env.DATABASE_HOST,
     user: process.env.DATABASE_USER,     
     password: process.env.DATABASE_PASSWORD, 
-    // port: process.env.DATABASE_PORT,
     database:process.env.DATABASE_NAME
   };
   console.log(dbConfig);
@@ -45,6 +43,6 @@ export default async function handler(req, res) {
   } catch (error) {
     console.error('ErrorINLINE:', error);
     console.error('ErrorINLINE2:', error.message);
-    res.status(500).json({ message: 'An error occurred', error: error.message});
+    res.status(500).json({ message: 'An error occurred', error: error.message, sqlConfigBeingUsed:dbConfig});
   }
 }

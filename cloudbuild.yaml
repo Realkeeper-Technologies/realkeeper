@@ -13,8 +13,7 @@ steps:
   entrypoint: 'npx'
   # args: ['run', 'build', '--', '--env=dev']
   # args: ['next', 'build', '--', '--env=${_TARGET_ENV}']
-  # args: ['next', 'build']
-  args: ['next', 'build', '--', '--env=development']
+  args: ['next', 'build']
   # args: ['NODE_ENV=development next build']
 
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'

@@ -13,8 +13,8 @@ steps:
   entrypoint: 'npx'
   # args: ['run', 'build', '--', '--env=dev']
   # args: ['next', 'build', '--', '--env=${_TARGET_ENV}']
-  # args: ['next', 'build']
-  args: ['cross-env NODE_ENV=development next build']
+  args: ['next', 'build']
+  # args: ['cross-env NODE_ENV=development next build']
 
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'

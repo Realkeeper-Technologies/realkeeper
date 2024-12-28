@@ -23,7 +23,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body>
-        <h1>Hello Nakul</h1>
+        <h1>Hello Nakul Suryan</h1>
       </body>
     </>
   );

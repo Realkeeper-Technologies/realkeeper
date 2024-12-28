@@ -1,6 +1,21 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 import mysql from 'mysql2/promise';
+import { SecretManagerServiceClient } from '@google-cloud/secret-manager';
+
+// Initialize Secret Manager Client
+const secretClient = new SecretManagerServiceClient();
+
+// Function to get secret from Google Secret Manager (if necessary)
+async function getSecret(secretName) {
+  const projectId = 'inspired-victor-446107-t9';  // Replace with your GCP project ID
+  const [version] = await secretClient.accessSecretVersion({
+    name: `projects/${projectId}/secrets/${secretName}/versions/latest`,
+  });
+
+  const payload = version.payload.data.toString('utf8');
+  return payload;
+}
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -8,13 +23,15 @@ export default async function handler(req, res) {
   }
 
   const dbConfig = {
-    // host: process.env.DATABASE_CONNECTION,
-    host: process.env.DATABASE_HOST,
+    host: req.headers.host.includes('localhost') ? process.env.DATABASE_HOST : await getSecret('mysql-internal-ip'),
     user: process.env.DATABASE_USER,     
+    // password: req.headers.host.includes('localhost') ? process.env.DATABASE_PASSWORD : await getSecret('mysql-deepak-pwd'), 
     password: process.env.DATABASE_PASSWORD, 
     database:process.env.DATABASE_NAME
   };
   console.log(dbConfig);
+  console.log(req.headers.host);
+
   try {
     // Step 1: Create a connection
     const connection = await mysql.createConnection(dbConfig);

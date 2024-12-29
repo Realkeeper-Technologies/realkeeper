@@ -1,4 +1,3 @@
-// File: /pages/create-db.js
 import { useState } from 'react';
 
 export default function CreateDbPage() {
@@ -9,7 +8,7 @@ export default function CreateDbPage() {
     setLoading(true);
     setMessage('');
     try {
-      const response = await fetch('/api/create-db', {
+      const response = await fetch('/api/root-db/api-update-db', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,7 +34,7 @@ export default function CreateDbPage() {
 
   return (
     <div style={{ padding: '20px', fontFamily: 'Arial' }}>
-      <h1>Create MySQL Database</h1>
+      <h1>Update Root Database</h1>
       <button
         onClick={handleCreateDb}
         disabled={loading}
@@ -49,7 +48,7 @@ export default function CreateDbPage() {
           borderRadius: '5px',
         }}
       >
-        {loading ? 'Creating...' : 'Create Database & Table'}
+        {loading ? 'Creating...' : 'Create Tables and Columns'}
       </button>
       {message && <p style={{ marginTop: '20px' }}>{message}</p>}
     </div>

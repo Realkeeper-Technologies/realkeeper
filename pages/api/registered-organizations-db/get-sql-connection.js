@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 import mysql from 'mysql2/promise';
-import getSecret from './get-managed-secret';
+import getSecret from '../get-managed-secret';
 
 export default async function createSqlConnection(req) {
   const dbConfig = {
